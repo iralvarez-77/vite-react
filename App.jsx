@@ -4,18 +4,16 @@ import { useEffect, useState } from "react"
 const FACT_URL = 'https://catfact.ninja/fact'
 // const IMAG_CAT_URL = `https://cataas.com/cat/says/${}`
 
-const App = ( props) => {
-  console.log(props);
+const App = () => {
 
-  const [fact, setFact] = useState('')
-  console.log(fact)
+  const [fact, setFact] = useState()
+  const [imag, setImag] = useState()
 
   useEffect(() => {
 
     fetch(FACT_URL)
       .then(resp => resp.json())
       .then(data => setFact(data.fact))
-
   }, [])
 
   return (
